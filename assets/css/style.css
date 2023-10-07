@@ -14,17 +14,20 @@
     margin-top: 2%;
   }
   
-  .main-header {
-    display: flex;
-    /* Forces elements to the next line if they don't fit */
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 60px;
-    background: #13293d;
-    color: #fff;
+  section {
+    flex: 70%;
+    background-color: #fff;
+    padding: 20px;
   }
   
-  .card {
+  aside {
+    flex: 30%;
+    background-color: white;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .projects {
     flex: 1 0 0;
     padding: 10px;
     text-align: center;
@@ -32,13 +35,13 @@
     border-width: 1px;
   }
   
-  .card header {
+  .projects header {
     padding: 20px;
     background: #13293d;
     color: #fff;
   }
   
-  .card img {
+  .projects img {
     width: 100%;
     min-width: 400px;
   }

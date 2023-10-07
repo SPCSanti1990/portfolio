@@ -6,57 +6,70 @@
         <title>Portfolio</title>
         <meta charset="UTF-8" />
         <meta name="portfolio" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     </head>
 
-    <nav>
-        <p>
-          This Navbar will change colors when the screen size hits 768px or
-          smaller.
-        </p>
-    </nav>
-
     <body>
         <main>
-            <section class="card">
-              <header>Camera</header>
-              <img src="./assets/images/camera.jpg" alt="camera" />
-              <p>Price: $300</p>
-            </section>
-            <section class="card">
-              <header>Tablet</header>
-              <img src="./assets/images/tablet.jpg" alt="tablet" />
-              <p>Price: $150</p>
-            </section>
-            <section class="card">
-              <header>Toilet Paper</header>
-              <img src="./assets/images/toilet-paper.jpg" alt="toilet paper" />
-              <p>Price: $30</p>
-            </section>
-            <section class="card">
-              <header>Wooden Spoons</header>
-              <img src="./assets/images/wooden-spoons.jpg" alt="wooden spoons" />
-              <p>Price: $10</p>
-            </section>
-            <section class="card">
-              <header>Soap</header>
-              <img src="./assets/images/soap.jpg" alt="soap" />
-              <p>Price: $5</p>
-            </section>
-            <section class="card">
-              <header>Spinning Top</header>
-              <img src="./assets/images/spinning-top.jpg" alt="spinning top" />
-              <p>Price: $3</p>
+            <!--Side bar with photo, contact information, and information about me.-->
+            <aside>
+                <img src="./assets/images/self-pic.jpg" alt="picture of self" />
+                <h2>Derek Santiago</h2>
+                <ul>
+                    <li>Portfolio</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </aside>
+
+            <section>
+                <div class="projects">
+                    <header>Robots</header>
+                    <img src="./assets/images/robots.jpg" alt="robots" />
+                    <p>Robotic frisbee golf for senior project. </p>
+                </div>
+      
+                <div class="projects">
+                    <header>Arduino Self Watering</header>
+                    <img src="./assets/images/tablet.jpg" alt="" />
+                    <p>Automatic watering system using an Arduino micro controler.</p>
+                </div>
+      
+                <div class="projects">
+                    <header>Hydropinic System</header>
+                    <img src="./assets/images/toilet-paper.jpg" alt="automatic hydroponic system" />
+                    <p>An automatic hydromonic system that uses a raspberry pi as the main controller, web control access, and GUI interface.
+                      Arduino micro controllers are used for a modular design and to have multiple operable under one main controler access.</p>
+                </div>
+      
+                <div class="projects">
+                    <header>placeholder</header>
+                    <img src="./assets/images/wooden-spoons.jpg" alt="wooden spoons" />
+                    <p>Price: $10</p>
+                </div>
+      
+                <div class="projects">
+                    <header>placeholder</header>
+                    <img src="./assets/images/soap.jpg" alt="soap" />
+                    <p>Price: $5</p>
+                </div>
+      
+                <div class="projects">
+                    <header>placeholder</header>
+                    <img src="./assets/images/spinning-top.jpg" alt="spinning top" />
+                    <p>Price: $3</p>
+                </div>
             </section>
         </main>
 
-              <!-- Footer -->
-            <footer>
-                <h3>
-                    Open Chrome DevTools --> Toggle device toolbar --> Resize the browser
-                    window!
-                </h3>
-            </footer>
+        <!-- Footer -->
+        <footer>
+            <h3>
+                 Open Chrome DevTools --> Toggle device toolbar --> Resize the browser
+                 window!
+            </h3>
+         </footer>
     </body>
 </html>
     <!--developer's name, a recent photo or avatar, and links to sections about them, their work, and how to contact them-->
