@@ -9,7 +9,6 @@
 
   h1, h2{
   margin-bottom: 0.625rem;
-  color: var(--heliotrope);
   font-weight: 700;
   line-height: 1.1;
 }
@@ -17,6 +16,7 @@
 h1 {
   /* 4rem = 40px (4 * 10px) */
   font-size: 4rem;
+  text-align: center;
 }
 
 h2 {
@@ -34,10 +34,19 @@ nav li::before {
     padding: 1%;
 }
 
+header {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+
+}
+
 body {
     font-size: 1.75rem;
     font-family: Arial;
     margin: 0;
+    background-color: darkgrey;
 }
   
 main {
@@ -49,8 +58,12 @@ main {
   
 section {
     flex: 70%;
-    background-color: #fff;
     padding: 20px;
+}
+
+section a {
+    color: black;
+    text-decoration: none;
 }
 
 aside {
@@ -58,14 +71,7 @@ aside {
     background-color: lightgray;
     padding: 20px;
     flex-wrap: wrap;
-}
-
-footer {
-    display: flex;
-    margin: 1.5rem;
-    text-align: center;
-    justify-content:space-between;
-    min-width: 300px;
+    max-width: 400px;
 }
   
 aside a {
@@ -78,8 +84,16 @@ aside a:hover {
     color: #fff;
 }
 
+footer {
+    display: flex;
+    margin: 1.5rem;
+    text-align: center;
+    justify-content:space-between;
+    min-width: 300px;
+}
+
   /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
-.row {
+ .row {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -96,25 +110,15 @@ aside a:hover {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100%;
-    padding: 2rem;
-    color: var(--heliotrope);
-  
-    /* outline is like border, but on the outside of the box instead of inside */
-    outline: 2px dashed var(--gin);
-    outline-offset: -2px;
-    transition: all 0.5s ease-in-out;
-}
-
-.code-card .card-header {
     /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
     position: relative;
     margin: -4rem 0 1.5rem 0;
     padding: 0.5rem 1rem;
-    background-color: var(--outer-space);
-    color: var(--heliotrope);
-    border: 2px solid var(--gin);
+    border: 2px solid;
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
+    /* each card's code block grows to the height of the largest code block on the page, making each card even in height */
+    flex-grow: 1; 
 }
 
 .card-column {
@@ -124,14 +128,17 @@ aside a:hover {
     transition: flex-basis 500ms linear;
     margin-bottom: 1.5rem;
     text-align: center;
-    border-style: solid;
-    border-width: 1px;
+    max-width: 340px;
 }
   
-  
 .card img {
-    width: 100%;
-    min-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    padding-bottom: 10px;
+    min-width: 200px;
 }
 
 /* Hide the resource links by default */
@@ -145,16 +152,28 @@ aside a:hover {
     display: block;
 }
 
-  /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
     /* on tablets, set columns to only be 50% of the width and not grow */
-    .project-column {
+    .card-column {
       flex: 0 0 50%;
       max-width: 50%;
     }
   
     /* select the last child to grow to full width if it has space to grow */
-    .project-column:last-child {
+    .card-column:last-child {
       flex-grow: 1;
     }
-}
+  }
+  
+  /* media query for larger screens */
+  @media screen and (min-width: 992px) {
+    header {
+      width: 75%;
+    }
+  
+    .card-column {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+    }
+  }
