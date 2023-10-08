@@ -34,6 +34,11 @@ nav li::before {
     padding: 1%;
 }
 
+li {
+  color: blue;
+  font-weight: bold;
+}
+
 header {
     width: 100%;
     margin: 0 auto;
@@ -74,7 +79,7 @@ aside {
     max-width: 400px;
 }
   
-aside a {
+aside a, li.contact {
     color: blue;
     font-weight: bold;
     text-decoration: none;
@@ -164,6 +169,7 @@ footer {
     .card-column:last-child {
       flex-grow: 1;
     }
+
   }
   
   /* media query for larger screens */
@@ -176,4 +182,5 @@ footer {
       flex: 0 0 33.333%;
       max-width: 33.333%;
     }
+
   }
