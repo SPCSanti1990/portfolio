@@ -14,4 +14,4 @@ Contact information is on a left navigation column that hides the information li
 
 ## Links
 
-[Portfolio](https://spcsanti1990.github.io/portfolio/ )
+[Portfolio](https://spcsanti1990.github.io/portfolio/)
