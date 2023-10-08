@@ -1,48 +1,160 @@
 * {
     box-sizing: border-box;
-  }
+}
   
-  body {
+  html {
+    /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
+    font-size: 62.5%;
+}
+
+  h1, h2{
+  margin-bottom: 0.625rem;
+  color: var(--heliotrope);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  /* 4rem = 40px (4 * 10px) */
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+p {
+    text-indent: 25px;
+    margin-bottom: 1rem;
+}
+
+nav li::before {
+    content: '※';
+    color: #0971d8;
+    padding: 1%;
+}
+
+body {
+    font-size: 1.75rem;
     font-family: Arial;
     margin: 0;
-  }
+}
   
-  main {
+main {
     display: flex;
     /* Forces elements to the next line if they don't fit */
     flex-wrap: wrap;
     margin-top: 2%;
-  }
+}
   
-  section {
+section {
     flex: 70%;
     background-color: #fff;
     padding: 20px;
-  }
-  
-  aside {
+}
+
+aside {
     flex: 30%;
-    background-color: white;
+    background-color: lightgray;
     padding: 20px;
     flex-wrap: wrap;
-  }
+}
 
-  .projects {
-    flex: 1 0 0;
-    padding: 10px;
+footer {
+    display: flex;
+    margin: 1.5rem;
+    text-align: center;
+    justify-content:space-between;
+    min-width: 300px;
+}
+  
+aside a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
+  
+aside a:hover {
+    color: #fff;
+}
+
+  /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+}
+  
+.justify-center {
+    justify-content: center;
+}
+
+.code-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100%;
+    padding: 2rem;
+    color: var(--heliotrope);
+  
+    /* outline is like border, but on the outside of the box instead of inside */
+    outline: 2px dashed var(--gin);
+    outline-offset: -2px;
+    transition: all 0.5s ease-in-out;
+}
+
+.code-card .card-header {
+    /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+    position: relative;
+    margin: -4rem 0 1.5rem 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--outer-space);
+    color: var(--heliotrope);
+    border: 2px solid var(--gin);
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card-column {
+    flex: 1 0 100%;
+    padding: 1.5rem;
+    /* when the screen resizes, make it so our columns don't jump in size */
+    transition: flex-basis 500ms linear;
+    margin-bottom: 1.5rem;
     text-align: center;
     border-style: solid;
     border-width: 1px;
-  }
+}
   
-  .projects header {
-    padding: 20px;
-    background: #13293d;
-    color: #fff;
-  }
   
-  .projects img {
+.card img {
     width: 100%;
     min-width: 400px;
-  }
+}
+
+/* Hide the resource links by default */
+.contact .links {
+    display: none;
+    padding: 1% 0;
+}
   
+  /* Display the links when the parent is in a hover state */
+  .contact:hover .links {
+    display: block;
+}
+
+  /* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
+@media screen and (min-width: 768px) {
+    /* on tablets, set columns to only be 50% of the width and not grow */
+    .project-column {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  
+    /* select the last child to grow to full width if it has space to grow */
+    .project-column:last-child {
+      flex-grow: 1;
+    }
+}
